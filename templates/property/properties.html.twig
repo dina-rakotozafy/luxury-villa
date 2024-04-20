@@ -44,7 +44,13 @@
                     <li>Bathrooms: <span>{{ property.bathroomNumber }}</span></li>
                     <li>Area: <span>{{ property.surface }} m²</span></li>
                     <li>Floor: <span>{{ property.floorNumber }}</span></li>
-                    <li>Parking: <span>{{ property.parkingAvailable }} spots</span></li>
+                    <li>
+                      {% if property.parkingAvailable > 0 %}
+                        Parking: <span>{{ property.parkingAvailable }} spot(s)</span>
+                      {% else %}
+                        No parking.
+                      {% endif %}
+                    </li>
                     </ul>
                     <div class="main-button">
                     <a href="{{ path('property_details', { 'id' : property.id } ) }}">Schedule a visit</a>
