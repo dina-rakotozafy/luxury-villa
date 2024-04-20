@@ -68,6 +68,9 @@ class Property
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $safety = null;
 
+    #[ORM\Column]
+    private ?int $bedroomNumber = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -285,6 +288,18 @@ class Property
     public function setSafety(?string $safety): static
     {
         $this->safety = $safety;
+
+        return $this;
+    }
+
+    public function getBedroomNumber(): ?int
+    {
+        return $this->bedroomNumber;
+    }
+
+    public function setBedroomNumber(int $bedroomNumber): static
+    {
+        $this->bedroomNumber = $bedroomNumber;
 
         return $this;
     }
