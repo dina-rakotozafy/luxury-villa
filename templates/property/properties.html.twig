@@ -8,8 +8,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <span class="breadcrumb"><a href="#">Home</a> / Properties</span>
-          <h3>Properties</h3>
+          <span class="breadcrumb"><a href="#">Accueil</a> / Propriétés</span>
+          <h3>Propriétés</h3>
         </div>
       </div>
     </div>
@@ -19,48 +19,52 @@
     <div class="container">
       <ul class="properties-filter">
         <li>
-          <a class="is_active" href="#!" data-filter="*">Show All</a>
+          <a class="is_active" href="#!" data-filter="*">Afficher tout</a>
         </li>
         <li>
-          <a href="#!" data-filter=".adv">Apartment</a>
+          <a href="#!" data-filter=".Appartement">Appartement</a>
         </li>
         <li>
-          <a href="#!" data-filter=".str">Villa House</a>
+          <a href="#!" data-filter=".Villa">Villa</a>
         </li>
         <li>
-          <a href="#!" data-filter=".rac">Penthouse</a>
+          <a href="#!" data-filter=".Penthouse">Penthouse</a>
+        </li>
+        <li>
+          <a href="#!" data-filter=".Duplex">Duplex</a>
         </li>
       </ul>
       <div class="row properties-box">
         {% for property in properties %}
-              <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6">
+              <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 {{ property.type }}">
                 <div class="item">
-                    <a href="{{ path('property_details', { 'id' : property.id } ) }}"><img src="assets/images/property-01.jpg" alt=""></a>
+                    <a href="{{ path('property_details', { 'id' : property.id } ) }}"><img src="uploads/images/{{ property.photos}}" alt=""></a>
                     <span class="category">{{ property.type }}</span>
                     <h6>{{ property.price }}$</h6>
                     <h4><a href="{{ path('property_details', { 'id' : property.id } ) }}">{{ property.address }}</a></h4>
                     <ul>
-                    <li>Bedrooms: <span>{{ property.bedroomNumber }}</span></li>
-                    <li>Bathrooms: <span>{{ property.bathroomNumber }}</span></li>
-                    <li>Area: <span>{{ property.surface }} m²</span></li>
-                    <li>Floor: <span>{{ property.floorNumber }}</span></li>
-                    <li>
-                      {% if property.parkingAvailable > 0 %}
-                        Parking: <span>{{ property.parkingAvailable }} spot(s)</span>
-                      {% else %}
-                        No parking.
-                      {% endif %}
-                    </li>
+                      <li>Total chambre: <span>{{ property.roomNumber }}</span></li>
+                      <li>Chambre à coucher: <span>{{ property.bedroomNumber }}</span></li>
+                      <li>Salle de bain: <span>{{ property.bathroomNumber }}</span></li>
+                      <li>Surface: <span>{{ property.surface }} m²</span></li>
+                      <li>Étage: <span>{{ property.floorNumber }}</span></li>
+                      <li>
+                        {% if property.parkingAvailable > 0 %}
+                          Parking: <span>{{ property.parkingAvailable }} place(s)</span>
+                        {% else %}
+                          No parking.
+                        {% endif %}
+                      </li>
                     </ul>
                     <div class="main-button">
-                    <a href="{{ path('property_details', { 'id' : property.id } ) }}">Schedule a visit</a>
+                    <a href="{{ path('property_details', { 'id' : property.id } ) }}">Voir details</a>
                     </div>
                 </div>
               </div>
               {% endfor %}
       </div>
         
-      <div class="row">
+      <!--<div class="row">
         <div class="col-lg-12">
           <ul class="pagination">
             <li><a href="#">1</a></li>
@@ -69,7 +73,7 @@
             <li><a href="#">>></a></li>
           </ul>
         </div>
-      </div>
+      </div>-->
     </div>
   </div>
 

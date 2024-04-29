@@ -56,14 +56,14 @@ class Property
     #[ORM\Column(length: 255)]
     private ?string $paymentMethod = null;
 
-    #[ORM\Column]
-    private ?bool $isContractReady = null;
+    #[ORM\Column(nullable: true)]
+    private ?bool $isContractReady = false;
 
     #[ORM\Column(nullable: true)]
-    private ?bool $isFeatured = null;
+    private ?bool $isFeatured = false;
 
     #[ORM\Column(nullable: true)]
-    private ?bool $isMainSlider = null;
+    private ?bool $isMainSlider = false;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $safety = null;
