@@ -23,7 +23,7 @@
         composer install
       ```
 
-  * Lancer les migrations :
+  * Lancer les migrations (créer la BDD avant d'éxecuter ce commande, et importer le fichier *.sql s'il y en a) :
     
       ```
         php bin/console doctrine:migration:migrate
