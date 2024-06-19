@@ -3,14 +3,14 @@
       <div class="row">
         <div class="col-lg-8 col-md-8">
           <ul class="info">
-            <li><i class="fa fa-envelope"></i> info@company.com</li>
+            <li><i class="fa fa-envelope"></i> info@luxuryvilla.co</li>
             <li><i class="fa fa-map"></i> Sunny Isles Beach, FL 33160</li>
           </ul>
         </div>
         <div class="col-lg-4 col-md-4">
           <ul class="social-links">
             <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-            <li><a href="https://x.com/minthu" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
             <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
             <li><a href="#"><i class="fab fa-instagram"></i></a></li>
           </ul>
@@ -32,10 +32,17 @@
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                      <li><a href="{{ path('app_home') }}">Home</a></li>
-                      <li><a href="{{ path('properties') }}">Properties</a></li>
-                      <li><a href="contact.html">Contact Us</a></li>
-                      <li><a href="#"><i class="fa fa-calendar"></i> Schedule a visit</a></li>
+                      <li><a href="{{ path('app_home') }}"> Accueil</a></li>
+                      <li><a href="{{ path('properties') }}"> Propriétés</a></li>
+                      <li><a href="{{ path('app_contact') }}"> Contact</a></li>
+                      <li>
+                          <!-- Calendly link widget begin -->
+                          <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                          <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+                          <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/dinarakotozafy/30min'});return false;">
+                          <i class="fa fa-calendar"></i>Planifier une visite</a>
+                          <!-- Calendly link widget end -->
+                      </li>
                   </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
